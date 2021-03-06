@@ -40,10 +40,10 @@ jobs:
       - docker tag thoughts_server:latest edil3ra/thoughts-backend:$TRAVIS_BRANCH
       deploy:
       - provider: script
-        script: docker push vince/thoughts-backend:$TRAVIS_BRANCH
+        script: docker push edil3ra/thoughts-backend:$TRAVIS_BRANCH
         on:
           branch: master        
       - provider: script
-        script: docker push vince/thoughts-backend:$TRAVIS_TAG
+        script: docker push edil3ra/thoughts-backend:$TRAVIS_TAG
         on:
           tags: True
