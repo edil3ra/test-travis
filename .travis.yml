@@ -4,7 +4,7 @@ services:
 env:
   global:
     - DOCKER_COMPOSE_VERSION=1.23.2
-    - secure: "b1DepoQh5GUPRTfUFHSBi1p1BRvft/ozHsUrLM2kXfsKhAYGnIWBMbbSWLVu4IyOJ0yTBg4UJZ7ffaIo2YjLDUouR49DMph1RKTnmDLZtYWMveG8JyELYnohPXsPXgO17E6h1S4bOZX66eLaAjDOLa8BSmeWCDCf992IHg4Wsr//PuJ2EnT8/mnqU+Q7YF5Xo+ObXMcpPKaG+ivna65wFQ4oQNwi/vcGIaXu1kr6M5gQgW88NzDhZEQZnCv70TDACeE9n068ThIGFjSVFk4Z7mDnfU4Bmpo3IUkWuyGIIkgOBTjp3vXnqIQRHuMHae1V4DuD9qtTpIxoLRC/qUWngOdrKVvI9YuXU5hLCLUoRI74vT6eQ5h43EIAUDhSoSqNuYv87SW2mgq1AkOvdCo3z3/hWDDUrorLP9hzJsr4naPHkXlW/KnWRw0psUt1tnhjVI7HOME+DI/nXXfxDGaH10Kt9DDiEFimNg3hu8NdNGZjs3rviuZMgqZg0pHK84mQYPsJgALkWha+PTT+jDt7iUWB7pjb3d5CtahHTVgwT5n0i/mxPWeVxhWHdced1oq0o8CM/Zrl+/34V1ge2riEQesKQ71fzlWR5v75786xXxs6BHzH3IkbVqzKEWlMK5Fhz65LNnw2dedPZf25fzkOqfyi7ZNPDLhYruoFV7rfnSw="
+    - secure: "TYa6sGgtu+CzdsjnWRxgvZ6A8PU2esVtdy6E4JtHc9qgwPzy3+SfDDpOAT2UA5Bz8gpbdVA73rPlyHwG27beNM5jLODk2+5fGEACt2ZtmSvkmwFigYhNYiCrsVwDsmTGM3YBQsT9s7iCnFKwBt0pxtle9p3S8kjXG005Lx4x5LtRIDP7lwgyGMndFAf/xIYA+qTwvIcuk1hBASErq64xS4eErY3++9UbiP2vN7DbL/DqZRsQu95lftjm/KrcG090WC906tiDYiiJ/7bJfHE4bXWmxNn3DFhOtMyk3WPfA7CH3Z7WbUr+5xyN2wXJdJhorF4HSun01nbLHORJvh88YCDBD3p5LsKzVaumUrZQ1au1ALvfNsBNQuXGLulctDeQFcr1w/ETuCWLem1jNpThV6g0I5Vq/8/9jx3qBCoK9enES1oe+Z4Ndua/9u1oEQQji0V1sIcglrEAgcfq9PXNMCFBnsAkANzAvqhVNFXtbw1gm3ACRnkdin/jzY/BTANlbdVvMbbsh2y6G6FgiP8UWvRns6dQajmyz08U06rhjEptC1LO7dG1fs1cNul9koStpJsFWze6eS6E8+qSGxE/j7WmZeyYZQRNM9DvXxUkRqMXf4KaeCqgYnvbKL1ABu//zRqGeWQVK3K3XDGmob5a3PhZtSs6dDv+1kE+37qQoBY="
     - secure: "Lib8a0BHUk+Sr9EH2ue6g/JaIujnW4qMSYGXYn0pOSIPI5BEnYVWwWaXC/SEaNoXgaV3Ne3numnBTzT6HHgtVuteQ3q7yoOfPzMvDR5eoT/GFatMUrMVel8TXtOxgn7ywgxA3sjTormhJb4f9ASOQHXG6XvgIr2+kOy9KQkRlIBRpGI/nSTzSExB9WiBP8wm5LpHcmo4Plf9+TU2+NtHshKb+d2watk4bkquILNrImJ7A/XG02QLxuQQ3xR0ITNrUu8KQ5TLELuWkxUkI/yAjQIK5lYzOxXPPFncQ29eHaLhsZRUin5dfmM00GrkG+NtswNdNIAbkhVq5N4GPUYMjHl4Qfs5frvMUUHRAFhimXsO+YsiVo1UTjHGHI6DB1FypJTzdJEUZXcbKlEB/dGJtFIlm22N+orXCEVYhbhpSpbjcaF2p8NoYzP3Oqw+iWAOy2Bn91WhymbG6teQbSIytkqNZ7Qr5FhLSFuT9v0xEIoXa/AHY0Liju1KigqojaOAb+S09fKii6YG2xWe62QCjrUneyaP4iqGfXW9c6l9I82EiQO/bZrG0ebGz0DgponYT2dfo1rpiUtnzx7DtjRcPpjErwcoSY3BGNiu8O1Fqc90Y2MnZnO4Z04ZF3beRpElvYlFudqEPs50biPCgIZvqiUPb/ZJoezL45jehQ8CxbA="
 
 before_install:
@@ -15,8 +15,8 @@ before_install:
   - docker --version
   - docker-compose version
   - echo "Login into Docker Hub"
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - export GIT_SHA=`git rev-parse --short HEAD`
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USER" --password-stdin
+  - export GIT_SHA=`gitt rev-parse --short HEAD`
   - echo "Building commit $GIT_SHA"
 
 jobs:
